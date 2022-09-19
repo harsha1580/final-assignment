@@ -15,7 +15,8 @@ const register = async (req, res, next) => {
         res.status(201).json({
             success: true,
             message: "signup successful",
-            data: saveUser});
+            data: saveUser
+        });
     } catch (err) {
         res.status(500).json({ success: false, message: err.message });
     }
@@ -47,30 +48,6 @@ const login = async (req, res, next) => {
         //console.log(err)
         res.status(500).json({ success: false, message: err.message });
     }
-
-    //var username=req.body.username
-    // var password=req.body.password
-
-    // User.findOne({$or:[{email:username}]})
-    // .then(user=>{
-    //     if(user){
-    //         bcrypt.compare(password,user.password,function(err,result){
-    //             if(err){
-    //                 res.json({error:err})
-    //             }
-    //             if(result){
-    //                 let token=jwt.sign({id: user._id,isAdmin: user.isAdmin},process.env.JWT_SEC,{ expiresIn: "3d" });
-    //                 res.json({message:"Login successfully",token})
-    //             }
-    //             else{
-    //                 res.json({message:"Password Does not matched"})
-    //             }
-    //         })
-    //     }
-    //     else{
-    //         res.json({message:"No user found"})
-    //     }
-    // })
 
 }
 
